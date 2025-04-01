@@ -9,7 +9,7 @@ public class Reader extends Thread{
 
     @Override
     public void run() {
-        for (int i = 0; i < 3; i++) {
+        while(true){
             data.read();
             try {
                 Thread.sleep(1000);
