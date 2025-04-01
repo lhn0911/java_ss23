@@ -9,9 +9,9 @@ public class Writer extends Thread{
 
     @Override
     public void run() {
-        String[] messages = {"Hello", "How are you?", "Goodbye"};
-        for (String msg : messages) {
-            data.write(msg);
+        String[] messages = {"tin nhawns 1", "tin nhắn 2", "tin nhắn 3"};
+        for (String m : messages) {
+            data.write(m);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

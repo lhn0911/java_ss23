@@ -4,7 +4,7 @@ public class SharedData {
     private String message;
     private boolean hasMessage = false;
 
-    public synchronized void write(String msg) {
+    public synchronized void write(String m) {
         while (hasMessage) {
             try {
                 wait();
@@ -12,9 +12,9 @@ public class SharedData {
                 e.printStackTrace();
             }
         }
-        this.message = msg;
+        this.message = m;
         hasMessage = true;
-        System.out.println("Writer: Đã gửi tin nhắn - " + msg);
+        System.out.println("Writer: Đã gửi tin nhắn - " + m);
         notify();
     }
     public synchronized void read() {
